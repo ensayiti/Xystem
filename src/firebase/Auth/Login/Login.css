@@ -1,5 +1,5 @@
 .center {
-  background: #0f0e17;
+  background: #020c1b;
 }
 
 h1, p {
@@ -8,7 +8,7 @@ h1, p {
 
 .link {
   text-decoration: none;
-  color: #ff8906;
+  color: rgba(66, 153, 225, 0.6);
 }
 
 .btn {
@@ -36,6 +36,7 @@ h1, p {
   flex-direction: column;
   gap: 15px;
   margin: 0 auto 10px auto;
+  color: whitesmoke;
 }
 
 .auth__success{
@@ -47,5 +48,6 @@ h1, p {
 .auth__error{
   padding: 10px 0;
   background-color: hsl(0, 79%, 87%);
+  border-radius: 20px;
   margin-bottom: 20px;
 }

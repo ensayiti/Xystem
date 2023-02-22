@@ -2,16 +2,26 @@
   width: 90%;
   max-width: 400px;
   border: 1px solid #dcdcdc;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
 }
 
 .profile p {
-  text-align: left;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.profile > span{
-  color: blue;
-  margin-top: 30px;
-  cursor: pointer;
+.button {
+  width: 100%;
+  background-color: #a7a9be;
+  font-weight: bold;
+  color: #0f0e17;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.button:hover {
+  background-color: #ff8906;
+  color: #0f0e17;
 }
