@@ -1,5 +1,41 @@
 .center {
-  background: #020c1b;
+    background: linear-gradient(181deg, #2d033b, #810ca8, #c147e9, #e5b8f4);
+    background-size: 800% 800%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
 }
 
 h1, p {
@@ -8,7 +44,7 @@ h1, p {
 
 .link {
   text-decoration: none;
-  color: rgba(66, 153, 225, 0.6);
+  color: #5ba5eb;
 }
 
 .btn {
@@ -25,10 +61,12 @@ h1, p {
 .auth{
   width: 90%;
   max-width: 400px;
-  border: 1px solid #dcdcdc;
   padding: 20px;
   text-align: center;
   border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
 .auth form{

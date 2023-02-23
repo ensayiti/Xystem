@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useAuthValue } from "../../../context/AuthContext";
-import { Button, Input, Heading } from "@chakra-ui/react";
+import { Button, Input, Heading, Text } from "@chakra-ui/react";
 import { GoogleAuthProvider } from "firebase/auth";
 
 function Login() {
@@ -95,6 +95,9 @@ function Login() {
             {isLoading ? "Loading" : "Login"}{" "}
             {/* show "Loading" or "Login" depending on isLoading state */}
           </Button>
+          <Text color="white.500" fontSize="sm" fontWeight="bold">
+            OR
+          </Text>
           <Button
             colorScheme="red"
             onClick={loginWithGoogle}

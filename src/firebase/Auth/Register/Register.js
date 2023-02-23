@@ -8,7 +8,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { useAuthValue } from "../../../context/AuthContext";
-import { Heading, Input, Button } from "@chakra-ui/react";
+import { Heading, Input, Button, Text } from "@chakra-ui/react";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -111,6 +111,9 @@ function Register() {
           >
             Register
           </Button>
+          <Text color="white.500" fontSize="sm" fontWeight="bold">
+            OR
+          </Text>
           <Button
             colorScheme="red"
             onClick={registerWithGoogle}

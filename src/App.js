@@ -4,6 +4,7 @@ import Profile from "./firebase/Auth/Profile/Profile";
 import Register from "./firebase/Auth/Register/Register";
 import VerifyEmail from "./firebase/Auth/VerifyEmail/VerifyEmail";
 import Login from "./firebase/Auth/Login/Login";
+import Home from "./firebase/Auth/Home/Home";
 import { useState, useEffect } from "react";
 import { auth } from "./firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -34,52 +35,55 @@ function App() {
   }, []);
 
   return (
-    <ChakraProvider>
-      <Router>
-        <AuthProvider value={{ currentUser, timeActive, setTimeActive }}>
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <PrivateRoute>
-                  <Profile />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                !currentUser?.emailVerified ? (
-                  <Login />
-                ) : (
-                  <Navigate to="/" replace />
-                )
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                !currentUser?.emailVerified ? (
-                  <Register />
-                ) : (
-                  <Navigate to="/" replace />
-                )
-              }
-            />
-            <Route path="/verify-email" element={<VerifyEmail />} />
-            <Route
-              path="/xnotes"
-              element={
-                <Container sx={containerStyle}>
-                  <ToDo />
-                </Container>
-              }
-            />
-          </Routes>
-        </AuthProvider>
-      </Router>
-    </ChakraProvider>
+    !loading && (
+      <ChakraProvider>
+        <Router>
+          <AuthProvider value={{ currentUser, timeActive, setTimeActive }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                exact
+                path="/profile"
+                element={
+                  <PrivateRoute>
+                    <Profile />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  !currentUser?.emailVerified ? (
+                    <Login />
+                  ) : (
+                    <Navigate to="/profile" replace />
+                  )
+                }
+              />
+              <Route
+                path="/register"
+                element={
+                  !currentUser?.emailVerified ? (
+                    <Register />
+                  ) : (
+                    <Navigate to="/profile" replace />
+                  )
+                }
+              />
+              <Route path="/verify-email" element={<VerifyEmail />} />
+              <Route
+                path="/xnotes"
+                element={
+                  <Container sx={containerStyle}>
+                    <ToDo />
+                  </Container>
+                }
+              />
+            </Routes>
+          </AuthProvider>
+        </Router>
+      </ChakraProvider>
+    )
   );
 }
 
