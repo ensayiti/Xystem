@@ -2,7 +2,7 @@ import "./Profile.css";
 import { useAuthValue } from "../../../context/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
-import { Button, Heading, Stack, Box, Text } from "@chakra-ui/react";
+import { Button, Heading, Stack, Box, Text, Badge } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -34,28 +34,53 @@ function Profile() {
         </Heading>
         <p>
           <strong>Email: </strong>
-          {currentUser?.email} | <strong>Verified: </strong>
+          {currentUser?.email} | <strong>Status: </strong>
           <Box display="inline-flex" textAlign="center">
             {currentUser?.emailVerified ? (
-              <CheckCircleIcon color="green.500" />
+              <Stack direction="row">
+                (<CheckCircleIcon color="green.500" />
+                ), (<Badge colorScheme="green">Verified</Badge>)
+              </Stack>
             ) : (
-              <WarningIcon color="red.500" />
+              <Stack direction="row">
+                (<WarningIcon color="red.500" /> ), (
+                <Badge colorScheme="red">Not Verified</Badge>)
+              </Stack>
             )}
           </Box>
         </p>
         <hr />
         <Stack marginTop={3} spacing={3}>
-          <Button colorScheme="blue">
-            <Link to="/xnotes">xNotes - Internal</Link>
-          </Button>
           <Button colorScheme="blue" leftIcon={<ExternalLinkIcon />}>
             <Link to="https://x-notes-2.vercel.app/">xNotes V2 - External</Link>
           </Button>
           <Button colorScheme="blue" isDisabled>
+            <Link to="/xnotes">xNotes - Internal</Link>
+          </Button>
+          <Button colorScheme="blue" isDisabled>
             Coming Soon
           </Button>
           <Button colorScheme="blue" isDisabled>
             Coming Soon
+          </Button>
+          <hr />
+          <Text color="white.500" fontSize="sm" fontWeight="bold">
+            For Developer
+          </Text>
+          <Button colorScheme="purple" leftIcon={<ExternalLinkIcon />}>
+            <Link to="https://overapi.com/css" target="_blank">
+              CSS Cheat Sheet
+            </Link>
+          </Button>
+          <Button colorScheme="purple" leftIcon={<ExternalLinkIcon />}>
+            <Link to="https://smalldev.tools" target="_blank">
+              SmallDev Tools
+            </Link>
+          </Button>
+          <Button colorScheme="purple" leftIcon={<ExternalLinkIcon />}>
+            <Link to="https://typescale.com" target="_blank">
+              Visual Type Scale
+            </Link>
           </Button>
           <hr />
           <Text color="white.500" fontSize="sm" fontWeight="bold">
