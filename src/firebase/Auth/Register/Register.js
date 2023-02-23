@@ -50,7 +50,7 @@ function Register() {
     setIsLoading(true);
     signInWithPopup(auth, provider)
       .then(() => {
-        navigate("/");
+        navigate("/profile");
       })
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));
