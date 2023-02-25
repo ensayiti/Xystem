@@ -1,5 +1,5 @@
 .center {
-    background: url(https://c4.wallpaperflare.com/wallpaper/531/951/621/digital-digital-art-artwork-illustration-minimalism-hd-wallpaper-preview.jpg);
+    background: url("/src/assets/background.jpg");
     background-position: center;
     background-size: cover;
 }
