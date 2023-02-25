@@ -131,7 +131,16 @@ function Register() {
         <p>
           Already have an account?{" "}
           <Link to="/login" className="link">
-            Login
+            <Text
+              fontWeight="bold"
+              color="red.400"
+              _hover={{
+                color: "blue.400",
+                transition: "0.5s ease-out",
+              }}
+            >
+              Login
+            </Text>
           </Link>
         </p>
       </div>

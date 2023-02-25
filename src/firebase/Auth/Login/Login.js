@@ -112,8 +112,17 @@ function Login() {
         </form>
         <p>
           Don't have an account?{" "}
-          <Link to="/register" className="link">
-            Create one here
+          <Link to="/register">
+            <Text
+              fontWeight="bold"
+              color="red.400"
+              _hover={{
+                color: "blue.400",
+                transition: "0.5s ease-out",
+              }}
+            >
+              Create one here
+            </Text>
           </Link>
         </p>
       </div>

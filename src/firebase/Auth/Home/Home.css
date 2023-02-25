@@ -2,3 +2,12 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.here:hover {
+    transition: 1s ease;
+    color: #9F7AEA;
+}
+
+.xem:hover {
+    transition: 1s ease;
+    color: #9F7AEA;
+}

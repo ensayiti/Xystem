@@ -2,13 +2,14 @@ import "./Profile.css";
 import { useAuthValue } from "../../../context/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
-import { Button, Heading, Stack, Box, Text, Badge } from "@chakra-ui/react";
+import { Button, Heading, Stack, Box, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
   CheckCircleIcon,
   WarningIcon,
   ExternalLinkIcon,
+  LinkIcon,
 } from "@chakra-ui/icons";
 
 function Profile() {
@@ -33,18 +34,18 @@ function Profile() {
           Profile
         </Heading>
         <p>
-          <strong>Email: </strong>
-          {currentUser?.email} | <strong>Status: </strong>
-          <Box display="inline-flex" textAlign="center">
+          <strong>
+            <LinkIcon />{" "}
+          </strong>
+          {currentUser?.email}
+          <Box display="inline-flex" textAlign="center" marginLeft="5px">
             {currentUser?.emailVerified ? (
               <Stack direction="row">
-                (<CheckCircleIcon color="green.500" />
-                ), (<Badge colorScheme="green">Verified</Badge>)
+                (<CheckCircleIcon color="green.500" />)
               </Stack>
             ) : (
               <Stack direction="row">
-                (<WarningIcon color="red.500" /> ), (
-                <Badge colorScheme="red">Not Verified</Badge>)
+                (<WarningIcon color="red.500" /> )
               </Stack>
             )}
           </Box>
