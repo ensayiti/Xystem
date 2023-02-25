@@ -55,9 +55,6 @@ function Profile() {
             <Link to="https://x-notes-2.vercel.app/">xNotes V2 - External</Link>
           </Button>
           <Button colorScheme="blue" isDisabled>
-            <Link to="/xnotes">xNotes - Internal</Link>
-          </Button>
-          <Button colorScheme="blue" isDisabled>
             Coming Soon
           </Button>
           <Button colorScheme="blue" isDisabled>

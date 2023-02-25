@@ -11,9 +11,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import PrivateRoute from "./router/PrivateRoute";
 import { Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import { Container } from "@mui/material";
-import { containerStyle } from "./theme/customStyles";
-import ToDo from "./pages/ToDo";
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
@@ -71,14 +68,6 @@ function App() {
                 }
               />
               <Route path="/verify-email" element={<VerifyEmail />} />
-              <Route
-                path="/xnotes"
-                element={
-                  <Container sx={containerStyle}>
-                    <ToDo />
-                  </Container>
-                }
-              />
             </Routes>
           </AuthProvider>
         </Router>

@@ -79,7 +79,9 @@ function Register() {
             variant="flushed"
             type="email"
             value={email}
+            color="whiteAlpha.500"
             placeholder="Enter your email"
+            _placeholder={{ color: "inherit" }}
             required
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -89,7 +91,9 @@ function Register() {
             type="password"
             value={password}
             required
+            color="whiteAlpha.500"
             placeholder="Enter your password"
+            _placeholder={{ color: "inherit" }}
             onChange={(e) => setPassword(e.target.value)}
           />
 
@@ -98,7 +102,9 @@ function Register() {
             type="password"
             value={confirmPassword}
             required
+            color="whiteAlpha.500"
             placeholder="Confirm password"
+            _placeholder={{ color: "inherit" }}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
 

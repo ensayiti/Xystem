@@ -1,6 +1,4 @@
 .center {
-    background: linear-gradient(181deg, #2d033b, #810ca8, #c147e9, #000000);
-    background-size: 800% 800%;
     -webkit-animation: AnimationName 30s ease infinite;
     -moz-animation: AnimationName 30s ease infinite;
     animation: AnimationName 30s ease infinite;

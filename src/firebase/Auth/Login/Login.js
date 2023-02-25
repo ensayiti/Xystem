@@ -73,7 +73,9 @@ function Login() {
             type="email"
             value={email}
             required
+            color="whiteAlpha.500"
             placeholder="Enter your email"
+            _placeholder={{ color: "inherit" }}
             onChange={(e) => setEmail(e.target.value)}
           />
 
@@ -82,7 +84,9 @@ function Login() {
             type="password"
             value={password}
             required
+            color="whiteAlpha.500"
             placeholder="Enter your password"
+            _placeholder={{ color: "inherit" }}
             onChange={(e) => setPassword(e.target.value)}
           />
 
