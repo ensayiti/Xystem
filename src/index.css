@@ -8,11 +8,37 @@ span{
   display: block;
 }
 
+h1, p {
+  color: #fffffe;
+}
+
 .center {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("/src/assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
 }
 
 .todo-center {
@@ -57,4 +83,35 @@ code {
 ::-moz-selection {
   background-color: #233554;
   color: #fff;
+}
+
+.auth{
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.auth form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto 10px auto;
+}
+
+.auth__success{
+  padding: 10px 0;
+  background-color: hsl(147, 79%, 87%);
+  margin-bottom: 20px;
+}
+
+.auth__error{
+  padding: 10px 0;
+  background-color: hsl(0, 79%, 87%);
+  border-radius: 20px;
+  margin-bottom: 20px;
 }

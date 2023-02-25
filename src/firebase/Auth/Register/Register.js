@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { useAuthValue } from "../../../context/AuthContext";
 import { Heading, Input, Button, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -69,7 +70,12 @@ function Register() {
 
   return (
     <div className="center">
-      <div className="auth">
+      <motion.div
+        className="auth"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2 }}
+      >
         <Heading as={"h1"} marginBottom={"10px"}>
           Register
         </Heading>
@@ -143,7 +149,7 @@ function Register() {
             </Text>
           </Link>
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }

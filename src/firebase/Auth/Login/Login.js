@@ -10,6 +10,7 @@ import { auth } from "../../firebase";
 import { useAuthValue } from "../../../context/AuthContext";
 import { Button, Input, Heading, Text } from "@chakra-ui/react";
 import { GoogleAuthProvider } from "firebase/auth";
+import { motion } from "framer-motion";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -62,7 +63,12 @@ function Login() {
 
   return (
     <div className="center">
-      <div className="auth">
+      <motion.div
+        className="auth"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2 }}
+      >
         <Heading as={"h1"} marginBottom={"10px"}>
           Login
         </Heading>
@@ -125,7 +131,7 @@ function Login() {
             </Text>
           </Link>
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }
